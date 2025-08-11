@@ -1,0 +1,21 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <CurrentCreditLensModule>FinancialAnalysis</CurrentCreditLensModule>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(MSBuildThisFileDirectory)\..\content\Config\metadata\$(CurrentCreditLensModule)\**\*.dll" Exclude="$(MSBuildThisFileDirectory)\..\content\Config\metadata\$(CurrentCreditLensModule)\**\*.resources.dll" />
+  </ItemGroup>
+
+  <!-- Target Name must be different for each FT -->
+  <Target Name="Copy_FT_MMAS_Contents" BeforeTargets="_GenerateCompileInputs" >
+    <ItemGroup>
+      <ContentsToCopy Include="$(MSBuildThisFileDirectory)\..\content\**\*" Exclude="$(MSBuildThisFileDirectory)\..\content\Config\metadata\$(CurrentCreditLensModule)\Model\CodeGenOutput\*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(ContentsToCopy)" DestinationFolder="$(ProjectDir)\%(RecursiveDir)" Condition="'$(TargetFramework)' == 'net48' AND '$(CopyContentFiles)' == 'True'" />
+  </Target>
+
+  <PropertyGroup>
+    <BuildDependsOn>$(BuildDependsOn);Copy_FT_MMAS_Contents</BuildDependsOn>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Moodys.ERS.RO.FinancialAnalysis.FT.MMAS</id>
+    <version>$version$</version>
+    <title>Moodys.ERS.RO.FinancialAnalysis.FT.MMAS</title>
+    <authors>CreditLens</authors>
+    <owners>CAO Architecture Team</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Moodys.ERS.RO.FinancialAnalysis.FT.MMAS Nuget Package</description>
+    <copyright>Copyright © Moodys Analytics 2022</copyright>
+    <repository type="$repositoryType$" url="$repositoryUrl$" commit="$repositoryCommit$" />
+    <dependencies>
+      <dependency id="Moodys.ERS.RO.FinancialAnalysis.FT.SystemData" version="[6.5.1,)" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Reports\bin\$configuration$\net48\MMAS.dll" target="content\Config\metadata\FinancialAnalysis\Model\MMAS.dll"/>
+    <file src="Reports\bin\$configuration$\net48\MMAS.pdb" target="content\Config\metadata\FinancialAnalysis\Model\MMAS.pdb"/>
+    <file src="Reports\bin\$configuration$\net48\es\**" target="content\Config\metadata\FinancialAnalysis\Model\es"/>
+    <file src="Reports\bin\$configuration$\net48\es-419\**" target="content\Config\metadata\FinancialAnalysis\Model\es-419"/>
+    <file src="Reports\bin\$configuration$\net48\fr\**" target="content\Config\metadata\FinancialAnalysis\Model\fr"/>
+    <file src="Reports\bin\$configuration$\net48\fr-ca\**" target="content\Config\metadata\FinancialAnalysis\Model\fr-ca"/>
+    <file src="Reports\bin\$configuration$\net48\pt-BR\**" target="content\Config\metadata\FinancialAnalysis\Model\pt-BR"/>
+    <file src="Reports\bin\$configuration$\net48\th\**" target="content\Config\metadata\FinancialAnalysis\Model\th"/>
+    <file src="Reports\bin\$configuration$\net48\nl-NL\**" target="content\Config\metadata\FinancialAnalysis\Model\nl-NL"/>
+    <file src="..\Release DLLs\**" target="content\Config\metadata\FinancialAnalysis\Model"/>
+    <file src="..\TPL\*.tpl" target="content\Config\metadata\FinancialAnalysis\FTTemplates\" />
+    <!-- Include NuGet build scripts -->
+    <file src="*.targets" target="build" />
+  </files>
+</package>
